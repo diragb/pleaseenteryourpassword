@@ -1,6 +1,28 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+// Packages:
+import { Inter } from 'next/font/google'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+// Typescript:
+import type { AppProps } from 'next/app'
+
+// Context:
+import { AuthContextProvider } from '@/context/AuthContext'
+
+// Styles:
+import '@/styles/globals.css'
+import { Toaster } from '@/components/ui/toaster'
+
+// Constants:
+const inter = Inter({ subsets: ['latin'] })
+
+// Functions:
+const App = ({ Component, pageProps }: AppProps) => (
+  <main className={inter.className}>
+    <AuthContextProvider>
+      <Component {...pageProps} />
+    </AuthContextProvider>
+    <Toaster />
+  </main>
+)
+
+// Exports:
+export default App
