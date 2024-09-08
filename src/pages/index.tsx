@@ -123,8 +123,8 @@ const Home = () => {
               setUsernameIndex(0)
             } else {
               toast({
-                title: 'Shit! Something went wrong!',
-                description: 'This isn\'t supposed to happen. F*ck!',
+                title: 'Wrong password, moron!',
+                description: `Is your password ${ password } by any chance? Just guessing..`,
                 variant: 'destructive',
               })
             }
